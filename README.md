@@ -36,13 +36,26 @@ Dit project implementeert een kennis-agent die wetenschappelijke artikelen kan z
 
 ## 🔍 Gebruik
 
+### Uitvoeren van scripts
+
+> **Belangrijk**: Afhankelijk van je setup staan de bestanden ofwel in de hoofdmap ofwel in de `arxiv_agent_mvp/` submap.
+>
+> **GitHub Versie**: Als je de repository net hebt gecloned, staan de bestanden in de hoofdmap.
+> 
+> **Lokale Ontwikkelversie**: Als je werkt in de lokale kopie op je eigen machine, staan de bestanden mogelijk in de `arxiv_agent_mvp/` submap.
+
+Pas de onderstaande commando's aan op basis van je bestandslocaties:
+
 ### Web Interface
 
 Start de webserver:
 
 ```bash
-# Zorg ervoor dat je in de hoofdmap van het project bent
-python mcp_web_app_simple.py  # Voor de vereenvoudigde MCP implementatie
+# Voor GitHub versie (bestanden in root):
+python mcp_web_app_simple.py
+
+# Voor lokale ontwikkelversie (bestanden in submap):
+python arxiv_agent_mvp/mcp_web_app_simple.py
 ```
 
 Navigeer naar `http://127.0.0.1:5000` in je browser.
@@ -52,8 +65,11 @@ Navigeer naar `http://127.0.0.1:5000` in je browser.
 Run de agent direct vanaf de command line:
 
 ```bash
-# Zorg ervoor dat je in de hoofdmap van het project bent
-python agent_with_mcp_simple.py  # Voor de vereenvoudigde MCP implementatie
+# Voor GitHub versie (bestanden in root):
+python agent_with_mcp_simple.py
+
+# Voor lokale ontwikkelversie (bestanden in submap):
+python arxiv_agent_mvp/agent_with_mcp_simple.py
 ```
 
 ### Testen
@@ -61,8 +77,11 @@ python agent_with_mcp_simple.py  # Voor de vereenvoudigde MCP implementatie
 Voor een snelle test van de agent:
 
 ```bash
-# Zorg ervoor dat je in de hoofdmap van het project bent
+# Voor GitHub versie (bestanden in root):
 python test_agent.py
+
+# Voor lokale ontwikkelversie (bestanden in submap):
+python arxiv_agent_mvp/test_agent.py
 ```
 
 ## 📁 Projectstructuur
