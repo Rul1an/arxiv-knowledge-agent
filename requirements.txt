@@ -1,0 +1,8 @@
+openai-agents
+requests
+python-dotenv
+flask
+flask-cors
+python-socketio
+mcp
+openai
