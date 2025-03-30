@@ -11,18 +11,24 @@ Dit project implementeert een kennis-agent die wetenschappelijke artikelen kan z
 
 ## 🚀 Setup
 
-1. **Maak een virtual environment aan**:
+1. **Clone de repository**:
+   ```bash
+   git clone https://github.com/Rul1an/arxiv-knowledge-agent.git
+   cd arxiv-knowledge-agent
+   ```
+
+2. **Maak een virtual environment aan**:
    ```bash
    python -m venv env
    source env/bin/activate  # Op macOS/Linux
    ```
 
-2. **Installeer dependencies**:
+3. **Installeer dependencies**:
    ```bash
    pip install -r requirements.txt
    ```
 
-3. **Stel je API keys in**:
+4. **Stel je API keys in**:
    Maak een `.env` bestand aan in de hoofddirectory en voeg je OpenAI API key toe:
    ```
    OPENAI_API_KEY=your-key-here
@@ -35,8 +41,7 @@ Dit project implementeert een kennis-agent die wetenschappelijke artikelen kan z
 Start de webserver:
 
 ```bash
-python mcp_web_app.py  # Voor de originele MCP implementatie
-# of
+# Zorg ervoor dat je in de hoofdmap van het project bent
 python mcp_web_app_simple.py  # Voor de vereenvoudigde MCP implementatie
 ```
 
@@ -47,37 +52,48 @@ Navigeer naar `http://127.0.0.1:5000` in je browser.
 Run de agent direct vanaf de command line:
 
 ```bash
-python main_agent.py  # Voor de originele agent zonder MCP
-# of
-python agent_with_mcp.py  # Voor de agent met MCP integratie
-# of 
+# Zorg ervoor dat je in de hoofdmap van het project bent
 python agent_with_mcp_simple.py  # Voor de vereenvoudigde MCP implementatie
+```
+
+### Testen
+
+Voor een snelle test van de agent:
+
+```bash
+# Zorg ervoor dat je in de hoofdmap van het project bent
+python test_agent.py
 ```
 
 ## 📁 Projectstructuur
 
 - `arxiv_client.py` - Client voor de Arxiv API
-- `main_agent.py` - De oorspronkelijke agent implementatie zonder MCP
-- `agent_with_mcp.py` - Agent implementatie met MCP integratie
 - `agent_with_mcp_simple.py` - Vereenvoudigde agent met MCP integratie
-- `arxiv_mcp_server.py` - MCP server die de Arxiv functionaliteit beschikbaar stelt
 - `arxiv_mcp_server_simple.py` - Vereenvoudigde MCP server implementatie
-- `mcp_web_app.py` - Web interface voor de agent met MCP
 - `mcp_web_app_simple.py` - Web interface voor de vereenvoudigde MCP agent
+- `test_agent.py` - Test script voor de agent
 - `templates/` - HTML templates voor de webinterface
 - `README.md` - Deze documentatie
 - `README_MCP.md` - Gedetailleerde documentatie over de MCP implementatie
+- `FIXES.md` - Logboek van opgeloste technische uitdagingen
+- `SUMMARY.md` - Overzicht van het project en toekomstplannen
 
-## 🛠️ MCP Implementaties
+## 🛠️ MCP Implementatie
 
-Het project bevat twee MCP implementaties:
+Dit project bevat een vereenvoudigde implementatie van het Model Context Protocol:
 
-1. **Originele MCP** (arxiv_mcp_server.py): Gebruikt de volledige MCP library
-2. **Vereenvoudigde MCP** (arxiv_mcp_server_simple.py): Directe JSON-gebaseerde implementatie van het MCP protocol via stdin/stdout
+- **Vereenvoudigde MCP** (arxiv_mcp_server_simple.py): Directe JSON-gebaseerde implementatie van het MCP protocol via stdin/stdout
+
+De eenvoudige implementatie heeft de volgende voordelen:
+1. **Geen externe dependencies**: Implementeert MCP direct zonder afhankelijkheid van externe libraries
+2. **Betere stabiliteit**: Omzeilt compatibiliteitsproblemen met de officiële MCP libraries
+3. **Expliciete foutafhandeling**: Bevat uitgebreide error handling specifiek voor onze use case
+4. **Directe JSON-communicatie**: Gebruikt eenvoudige JSON-berichten over stdin/stdout
 
 ## 📚 Technische Details
 
 Zie `README_MCP.md` voor gedetailleerde informatie over de MCP-integratie en architectuur.
+Zie `FIXES.md` voor een overzicht van opgeloste technische uitdagingen.
 
 ## 🧩 Uitbreiden
 
